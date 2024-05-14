@@ -1,5 +1,6 @@
 <script setup></script>
-
 <template>
-  <RouterView />
+  <div>
+    <h1>Signin</h1>
+  </div>
 </template>
