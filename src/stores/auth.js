@@ -2,13 +2,13 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('authStore', () => {
-  const jwt = ref('')
-  let user = {}
-
   /**
+   * State
    * 認証情報
    * @type{object}
    */
+  const jwt = ref('')
+  let user = {}
 
   /**
    * ログイン処理
