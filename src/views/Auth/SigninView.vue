@@ -37,7 +37,7 @@ const submit = async () => {
 </script>
 <template>
   <v-expand-transition>
-    <v-card class="mx-auto my-3 pa-5" style="max-width: 500px" v-show="showComponent">
+    <v-card class="mx-auto my-3 pa-5 sign-card" v-show="showComponent">
       <v-card-title class="text-center">サインイン</v-card-title>
       <v-card-item>
         <v-text-field
@@ -83,13 +83,4 @@ const submit = async () => {
   </v-expand-transition>
 </template>
 
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
+<style scoped></style>
