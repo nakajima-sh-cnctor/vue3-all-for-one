@@ -10,6 +10,7 @@ const formValue = reactive({
 })
 
 const showComponent = ref(false)
+const loading = ref(false)
 
 onMounted(() => {
   showComponent.value = true
@@ -29,6 +30,8 @@ const v$ = reactive(
 const submit = async () => {
   const validError = await v$.value.$validate()
   if (!validError) return
+  loading.value = true
+  setTimeout(() => (loading.value = false), 1500)
   // TODO: store authのaction（ログイン処理）を呼び出す
 }
 </script>
@@ -70,7 +73,7 @@ const submit = async () => {
         <div class="d-flex">
           <v-btn class="pa-0" color="primary" variant="text">パスワードを忘れた場合</v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="primary" @click="submit">
+          <v-btn color="primary" @click="submit" :loading="loading">
             <v-icon left>mdi-login</v-icon>
             サインイン
           </v-btn>
