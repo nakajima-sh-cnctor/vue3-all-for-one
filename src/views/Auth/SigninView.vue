@@ -19,6 +19,12 @@ const v$ = reactive(
     formValue
   )
 )
+// 認証処理
+const submit = async () => {
+  const validError = await v$.value.$validate()
+  if (!validError) return
+  // TODO: store authのaction（ログイン処理）を呼び出す
+}
 </script>
 <template>
   <v-container fluid fill-height>
@@ -63,7 +69,7 @@ const v$ = reactive(
             <div class="d-flex">
               <v-btn class="pa-0" color="primary" variant="text">パスワードを忘れた場合</v-btn>
               <v-spacer></v-spacer>
-              <v-btn color="primary">
+              <v-btn color="primary" @click="submit">
                 <v-icon left>mdi-login</v-icon>
                 サインイン
               </v-btn>
