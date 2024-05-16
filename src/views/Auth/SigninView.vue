@@ -1,4 +1,25 @@
-<script setup></script>
+<script setup>
+import { reactive, ref, defineEmits, defineProps } from 'vue'
+import useVuelidate from '@vuelidate/core'
+import { validEmail, validPassword } from '@/plugins/validatorRule'
+
+// 入力項目
+const formValue = reactive({
+  email: '',
+  password: ''
+})
+
+// バリデーション処理
+const v$ = reactive(
+  useVuelidate(
+    {
+      email: validEmail(),
+      password: validPassword()
+    },
+    formValue
+  )
+)
+</script>
 <template>
   <v-container fluid fill-height>
     <v-row class="grid-box" align="center" justify="center">
@@ -10,15 +31,20 @@
           <v-card-title>サインイン</v-card-title>
           <v-card-item>
             <v-text-field
+              v-model="formValue.email"
               placeholder="メールアドレス"
               prepend-inner-icon="mdi-account-circle-outline"
               variant="outlined"
               density="compact"
               required
               single-line
+              :error-messages="v$.email.$errors.map((e) => e.$message)"
+              @input="v$.email.$touch"
+              @blur="v$.email.$touch"
             ></v-text-field>
 
             <v-text-field
+              v-model="formValue.password"
               placeholder="パスワード"
               prepend-inner-icon="mdi-shield-key-outline"
               variant="outlined"
@@ -26,13 +52,16 @@
               type="password"
               required
               single-line
+              :error-messages="v$.password.$errors.map((e) => e.$message)"
+              @input="v$.password.$touch"
+              @blur="v$.password.$touch"
             ></v-text-field>
           </v-card-item>
           <v-card-item>
             <div class="d-flex">
               <v-btn class="pa-0" color="primary" variant="text">パスワードを忘れた場合</v-btn>
               <v-spacer></v-spacer>
-              <v-btn color="primary" border>
+              <v-btn color="primary">
                 <v-icon left>mdi-login</v-icon>
                 サインイン
               </v-btn>
