@@ -27,6 +27,11 @@ const router = createRouter({
           path: '',
           name: 'Signin',
           component: () => import('../views/Auth/SigninView.vue')
+        },
+        {
+          path: 'authentication-code-sending',
+          name: 'AuthenticationCodeSending',
+          component: () => import('../views/Auth/AuthenticationCodeSendingView.vue')
         }
       ]
     }
