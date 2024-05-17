@@ -2,6 +2,8 @@
 import { reactive, ref, onMounted } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { validPassword } from '@/plugins/validatorRule'
+// コンポーネント
+import CTextField from '@/components/OverrideVuetify/TextFieldComponent.vue'
 
 // 入力項目
 const formValue = reactive({
@@ -38,21 +40,15 @@ const submit = async () => {
     <v-card class="mx-auto my-3 pa-5 sign-card" v-show="showComponent">
       <v-card-title class="text-center">新しいパスワードを入力してください</v-card-title>
       <v-card-item>
-        <v-text-field
+        <c-text-field
           v-model="formValue.password"
           placeholder="パスワード"
           prepend-inner-icon="mdi-shield-key-outline"
-          variant="outlined"
-          density="compact"
           type="password"
-          color="primary"
-          required
-          single-line
           :error-messages="v$.password.$errors.map((e) => e.$message)"
           @input="v$.password.$touch"
           @blur="v$.password.$touch"
-          class="my-3"
-        ></v-text-field>
+        ></c-text-field>
       </v-card-item>
       <v-card-item>
         <div class="d-flex">
