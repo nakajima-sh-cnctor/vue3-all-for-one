@@ -45,6 +45,7 @@ const submit = async () => {
           prepend-inner-icon="mdi-account-circle-outline"
           variant="outlined"
           density="compact"
+          color="primary"
           required
           single-line
           :error-messages="v$.email.$errors.map((e) => e.$message)"

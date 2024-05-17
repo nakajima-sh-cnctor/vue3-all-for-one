@@ -45,6 +45,7 @@ const submit = async () => {
           variant="outlined"
           density="compact"
           type="password"
+          color="primary"
           required
           single-line
           :error-messages="v$.password.$errors.map((e) => e.$message)"
