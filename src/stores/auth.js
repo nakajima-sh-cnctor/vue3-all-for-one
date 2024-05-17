@@ -19,7 +19,7 @@ export const useAuthStore = defineStore('authStore', () => {
    */
 
   /**
-   * パスワードリセット
+   * 認証コード送信処理
    * @param {string} email
    * @returns {Promise<void>}
    */

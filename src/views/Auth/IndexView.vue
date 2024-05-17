@@ -7,6 +7,7 @@
           <div class="text-center">
             <img height="70" contain src="@/assets/alt_logo.png" />
           </div>
+
           <RouterView />
         </v-col>
       </v-row>
@@ -25,5 +26,9 @@
 /* 子コンポーネントに適応させるCSS */
 .sign-card {
   max-width: 500px;
+}
+.supplement-m {
+  color: rgb(122, 116, 116);
+  font-size: 13px;
 }
 </style>
