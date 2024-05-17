@@ -24,6 +24,12 @@ export const useAuthStore = defineStore('authStore', () => {
    * @returns {Promise<void>}
    */
 
+  /**
+   * パスワード更新処理
+   * @param {string} password
+   * @returns {Promise<void>}
+   */
+
   return {
     jwt,
     user

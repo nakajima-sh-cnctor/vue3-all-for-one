@@ -32,6 +32,11 @@ const router = createRouter({
           path: 'authentication-code-sending',
           name: 'AuthenticationCodeSending',
           component: () => import('../views/Auth/AuthenticationCodeSendingView.vue')
+        },
+        {
+          path: 'password-update',
+          name: 'PasswordUpdate',
+          component: () => import('../views/Auth/PasswordUpdateView.vue')
         }
       ]
     }
