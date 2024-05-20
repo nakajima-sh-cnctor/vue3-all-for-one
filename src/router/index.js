@@ -37,6 +37,11 @@ const router = createRouter({
           path: 'password-update',
           name: 'PasswordUpdate',
           component: () => import('../views/Auth/PasswordUpdateView.vue')
+        },
+        {
+          path: 'account-switching',
+          name: 'AccountSwitching',
+          component: () => import('../views/Auth/AccountSwitchingView.vue')
         }
       ]
     }
