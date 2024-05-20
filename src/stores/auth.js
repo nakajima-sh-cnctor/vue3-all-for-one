@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('authStore', () => {
@@ -9,12 +9,21 @@ export const useAuthStore = defineStore('authStore', () => {
    */
   const jwt = ref('')
   let user = {}
+  let accountList = reactive([
+    { value: 1, title: 'account_name_1' },
+    { value: 2, title: 'account_name_2' }
+  ])
 
   /**
    * ログイン処理
    * @param {string} email
    * @param {string} password
    * @param {boolean} rore
+   * @returns {Promise<void>}
+   */
+
+  /**
+   * ログアウト処理
    * @returns {Promise<void>}
    */
 
@@ -32,6 +41,7 @@ export const useAuthStore = defineStore('authStore', () => {
 
   return {
     jwt,
-    user
+    user,
+    accountList
   }
 })
