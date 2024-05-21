@@ -8,7 +8,8 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   plugins: [vue(), VueDevTools()],
   server: {
-    port: 8084
+    // TODO: 環境変数から取得するように変更
+    port: 8085
   },
 
   resolve: {
