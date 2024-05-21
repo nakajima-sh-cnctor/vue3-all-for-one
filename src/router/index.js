@@ -44,6 +44,11 @@ const router = createRouter({
           component: () => import('../views/Auth/AccountSwitchingView.vue')
         }
       ]
+    },
+    {
+      path: '/admin/line',
+      name: 'Line',
+      component: () => import('../views/LINE/IndexView.vue')
     }
   ]
 })
