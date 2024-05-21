@@ -8,7 +8,12 @@ export const useAuthStore = defineStore('authStore', () => {
    * @type{object}
    */
   const jwt = ref('')
-  let user = {}
+
+  let user = reactive({
+    accountname: 'user_name',
+    email: 'user_email'
+  })
+
   let accountList = reactive([
     { value: 1, title: 'account_name_1' },
     { value: 2, title: 'account_name_2' }
