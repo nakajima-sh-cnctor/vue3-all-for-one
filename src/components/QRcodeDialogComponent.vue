@@ -1,8 +1,13 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 
-const generateText = ref('https://line.me/R/ti/p/@xxxxxxx')
+defineProps({
+  generateText: {
+    type: String
+  }
+})
+
 const option = reactive({
   width: 200,
   height: 200,
