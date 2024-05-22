@@ -48,7 +48,14 @@ const router = createRouter({
     {
       path: '/admin/line',
       name: 'Line',
-      component: () => import('../views/LINE/IndexView.vue')
+      component: () => import('../views/LINE/IndexView.vue'),
+      children: [
+        {
+          path: 'setting',
+          name: 'Setting',
+          component: () => import('../views/LINE/SettingView.vue')
+        }
+      ]
     }
   ]
 })
