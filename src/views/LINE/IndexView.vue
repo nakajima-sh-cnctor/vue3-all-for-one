@@ -8,9 +8,9 @@ import CMenu from '@/components/MenuComponent.vue'
     <c-header></c-header>
     <v-main>
       <c-menu></c-menu>
-      <div class="pa-5">
+      <v-card class="ma-5">
         <RouterView />
-      </div>
+      </v-card>
     </v-main>
   </v-app>
 </template>
