@@ -9,16 +9,21 @@ export const useService = defineStore('serviceStore', () => {
    */
   const service = ref('')
 
-  let serviceList = reactive([
-    { value: 'home', title: 'Home', icon: 'mdi-home-city' },
-    { value: 'account', title: 'My Account', icon: 'mdi-account' },
-    { value: 'users', title: 'Users', icon: 'mdi-account-group-outline' }
-  ])
+  let serviceList = reactive([])
 
   /**
-   * サービス情報取得処理
+   * LINEサービス情報取得処理
    * @returns {Promise<void>}
    */
+  const getLineService = async () => {
+    serviceList.push({
+      value: 'line-config',
+      title: 'LINE設定',
+      icon: 'mdi-cog-outline',
+      to: '/admin/line/setting'
+    })
+    console.log('getLineService')
+  }
 
   /**
    * サービス情報更新処理
@@ -28,6 +33,7 @@ export const useService = defineStore('serviceStore', () => {
 
   return {
     service,
-    serviceList
+    serviceList,
+    getLineService
   }
 })

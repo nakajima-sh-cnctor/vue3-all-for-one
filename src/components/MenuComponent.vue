@@ -21,6 +21,7 @@ const rail = ref(true)
         v-for="(item, i) in useService().serviceList"
         :key="i"
         :prepend-icon="item.icon"
+        :to="item.to"
         :title="item.title"
         :value="item.value"
       ></v-list-item>

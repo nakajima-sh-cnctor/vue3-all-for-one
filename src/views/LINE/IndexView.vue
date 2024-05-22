@@ -2,6 +2,10 @@
 // コンポーネント
 import CHeader from '@/components/HeaderComponent.vue'
 import CMenu from '@/components/MenuComponent.vue'
+
+import { useService } from '@/stores/service'
+
+useService().getLineService()
 </script>
 <template>
   <v-app class="v-app">
