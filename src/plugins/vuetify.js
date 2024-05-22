@@ -15,6 +15,7 @@ export default createVuetify(
         light: {
           colors: {
             primary: '#009688',
+            secondary: '#607D8B',
             error: '#ff5252'
           }
         }
