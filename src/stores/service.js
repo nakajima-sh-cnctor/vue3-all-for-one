@@ -26,7 +26,7 @@ export const useService = defineStore('serviceStore', () => {
       },
       {
         value: 'auto-response',
-        title: '自動応答設定',
+        title: 'メッセージ応答',
         icon: 'mdi-message-reply',
         to: '/admin/line/auto-response'
       }
