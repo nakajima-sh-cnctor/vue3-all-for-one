@@ -14,22 +14,20 @@ const lineConfig = useLineConfig().config
 </script>
 <template>
   <div>
-    <v-card-item>
-      <div class="d-flex">
-        <v-card-title class="font-weight-bold">LINE設定</v-card-title>
-        <v-spacer></v-spacer>
-        <div>
-          <v-btn color="secondary" variant="flat">
-            <v-icon>mdi-cached</v-icon>
-            データ更新
-          </v-btn>
-          <v-btn color="primary" variant="flat" class="mx-2">
-            <v-icon>mdi-content-save-outline</v-icon>
-            保存
-          </v-btn>
-        </div>
+    <div class="d-flex align-center pa-3">
+      <v-card-title class="font-weight-bold">LINE設定</v-card-title>
+      <v-spacer></v-spacer>
+      <div>
+        <v-btn color="secondary" variant="flat">
+          <v-icon>mdi-cached</v-icon>
+          データ更新
+        </v-btn>
+        <v-btn color="primary" variant="flat" class="mx-2">
+          <v-icon>mdi-content-save-outline</v-icon>
+          保存
+        </v-btn>
       </div>
-    </v-card-item>
+    </div>
     <v-divider></v-divider>
     <v-card-item>
       <c-caption caption="Webhook URL">
