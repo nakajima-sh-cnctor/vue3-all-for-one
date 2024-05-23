@@ -58,7 +58,12 @@ const router = createRouter({
         {
           path: 'auto-response',
           name: 'AutoResponse',
-          component: () => import('../views/LINE/AutoResponseView.vue')
+          component: () => import('../views/LINE/AutoResponse/ListView.vue')
+        },
+        {
+          path: 'auto-response/create',
+          name: 'AutoResponseCreate',
+          component: () => import('../views/LINE/AutoResponse/CreateView.vue')
         }
       ]
     }
