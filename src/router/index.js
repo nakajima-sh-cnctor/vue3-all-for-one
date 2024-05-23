@@ -54,6 +54,11 @@ const router = createRouter({
           path: 'setting',
           name: 'Setting',
           component: () => import('../views/LINE/SettingView.vue')
+        },
+        {
+          path: 'auto-response',
+          name: 'AutoResponse',
+          component: () => import('../views/LINE/AutoResponseView.vue')
         }
       ]
     }

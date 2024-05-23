@@ -15,14 +15,22 @@ export const useService = defineStore('serviceStore', () => {
    * LINEサービス情報取得処理
    * @returns {Promise<void>}
    */
-  const getLineService = async () => {
-    serviceList.push({
-      value: 'line-config',
-      title: 'LINE設定',
-      icon: 'mdi-cog-outline',
-      to: '/admin/line/setting'
-    })
-    console.log('getLineService')
+  const getLineService = () => {
+    serviceList.splice(0)
+    serviceList.push(
+      {
+        value: 'line-config',
+        title: 'LINE設定',
+        icon: 'mdi-cog-outline',
+        to: '/admin/line/setting'
+      },
+      {
+        value: 'auto-response',
+        title: '自動応答設定',
+        icon: 'mdi-message-reply',
+        to: '/admin/line/auto-response'
+      }
+    )
   }
 
   /**
