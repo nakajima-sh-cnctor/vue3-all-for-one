@@ -1,11 +1,34 @@
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAutoResponse = defineStore('autoResponseStore', () => {
   /**
    * State
-   * 一覧のヘッダー情報
+   * 一覧のヘッダー情報(headers)
    * @type{object}
+   *
+   * データ(desserts)
+   * @type{object}
+   *
+   * ディティール(detail)
+   * ステータス(status)
+   * @type{flag}
+   *
+   * 応答ステータス(restype)
+   * @type{一律応答, キーワード応答}
+   *
+   * キーワード(keyword)
+   * @type{object}
+   *
+   * オプション設定(option)
+   * @type{flag}
+   *
+   * スケジュールタイプ(sukejurutype)
+   * @type{string}
+   *
+   * スケジュール(sukejuru)
+   * @type{object}
+   *
    */
   const headers = reactive([
     {
@@ -21,12 +44,25 @@ export const useAutoResponse = defineStore('autoResponseStore', () => {
     { key: 'operation', title: '操作' }
   ])
 
-  /**
-   * State
-   * データ
-   * @type{object}
-   */
   let desserts = reactive([])
+
+  const detail = reactive({
+    restype: 0,
+    status: 0,
+    keyword: '',
+    option: false,
+    sukejurutype: 'date',
+    sukejuru: {
+      date: {
+        from: '',
+        to: ''
+      },
+      time: {
+        from: '',
+        to: ''
+      }
+    }
+  })
 
   /**
    * 自動応答設定情報取得処理
@@ -41,6 +77,7 @@ export const useAutoResponse = defineStore('autoResponseStore', () => {
 
   return {
     headers,
-    desserts
+    desserts,
+    detail
   }
 })
