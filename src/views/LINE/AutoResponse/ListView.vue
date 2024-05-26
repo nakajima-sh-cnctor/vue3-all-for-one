@@ -9,13 +9,11 @@ import CCaption from '@/components/CaptionComponent.vue'
 // store
 import { useAutoResponse } from '@/stores/autoresponse'
 
-const headers = useAutoResponse().headers
-const desserts = useAutoResponse().desserts
 const search = ref('')
 const itemsPerPage = 3
 const page = ref(1)
 
-const pageCount = computed(() => Math.ceil(desserts.length / itemsPerPage))
+const pageCount = computed(() => Math.ceil(useAutoResponse().desserts.length / itemsPerPage))
 </script>
 <template>
   <div>
@@ -44,8 +42,8 @@ const pageCount = computed(() => Math.ceil(desserts.length / itemsPerPage))
     <v-card-item>
       <v-data-table
         v-model:page="page"
-        :headers="headers"
-        :items="desserts"
+        :headers="useAutoResponse().headers"
+        :items="useAutoResponse().desserts"
         :search="search"
         :items-per-page="itemsPerPage"
         no-data-text="データがありません"
