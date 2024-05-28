@@ -7,7 +7,7 @@ import CTextarea from '@/components/OverrideVuetify/TextareaComponent.vue'
 import { useBroadcast } from '@/stores/broadcast'
 </script>
 <template>
-  <v-card-title class="font-weight-bold">応答メッセージ作成</v-card-title>
+  <v-card-title class="font-weight-bold">配信メッセージ作成</v-card-title>
   <v-card-item class="d-flex flex-row-reverse">
     <v-btn color="secondary" variant="flat" min-width="100"> 下書き保存 </v-btn>
     <v-btn color="secondary" variant="flat" min-width="100" class="mx-3"> テスト配信 </v-btn>

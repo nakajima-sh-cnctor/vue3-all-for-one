@@ -29,6 +29,18 @@ export const useService = defineStore('serviceStore', () => {
         title: 'メッセージ応答',
         icon: 'mdi-message-reply',
         to: '/admin/line/auto-response'
+      },
+      {
+        value: 'broadcast',
+        title: '配信メッセージ一覧',
+        icon: 'mdi-view-list',
+        to: '/admin/line/broadcast'
+      },
+      {
+        value: 'broadcast-create',
+        title: '配信メッセージ作成',
+        icon: 'mdi-pencil',
+        to: '/admin/line/broadcast/create'
       }
     )
   }
