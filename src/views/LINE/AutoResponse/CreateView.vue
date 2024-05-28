@@ -123,6 +123,7 @@ const addKeyword = () => {
           </v-radio-group>
         </template>
       </c-caption>
+      <!-- TODO：複数設定可能だが、他の機能との兼ね合いで今回は1件のみにしておく -->
       <c-caption caption="メッセージ設定">
         <c-textarea></c-textarea>
       </c-caption>

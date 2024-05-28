@@ -14,7 +14,7 @@ const pageCount = computed(() => Math.ceil(useBroadcast().desserts.length / item
 </script>
 <template>
   <div>
-    <v-card-title class="font-weight-bold">メッセージ配信</v-card-title>
+    <v-card-title class="font-weight-bold">メッセージ配信一覧</v-card-title>
     <v-card-item>
       <v-tabs v-model="useBroadcast().tab" color="primary">
         <v-tab v-for="(item, index) in tabs" :key="index" :value="item.value">{{
