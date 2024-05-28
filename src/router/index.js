@@ -69,6 +69,16 @@ const router = createRouter({
           path: 'broadcast',
           name: 'Broadcast',
           component: () => import('../views/LINE/Broadcast/ListView.vue')
+        },
+        {
+          path: 'broadcast/detail',
+          name: 'BroadcastDetail',
+          component: () => import('../views/LINE/Broadcast/DetailView.vue')
+        },
+        {
+          path: 'broadcast/create',
+          name: 'CreateBroadcast',
+          component: () => import('../views/LINE/Broadcast/CreateView.vue')
         }
       ]
     }
