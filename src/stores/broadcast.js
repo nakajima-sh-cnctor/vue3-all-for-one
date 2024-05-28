@@ -24,6 +24,83 @@ export const useBroadcast = defineStore('broadcastStore', () => {
   const tab = ref(null)
   const page = ref(1)
 
+  const detail = reactive([
+    {
+      name: 'ステータス',
+      value: '配信済み'
+    },
+    {
+      name: '配信日時',
+      value: '2021/10/01 12:00'
+    },
+    {
+      name: 'LINE VOOMに投稿',
+      value: 'オン'
+    },
+    {
+      name: '配信メッセージ数',
+      value: 'オフ'
+    },
+    {
+      name: 'A/Bテスト',
+      value: 'オフ'
+    },
+    {
+      name: 'キャンペーン',
+      value: 'オフ'
+    },
+    {
+      name: 'ターゲット',
+      value: 'すべてのお友だち'
+    },
+    {
+      name: '配信人数',
+      value: '0'
+    },
+    {
+      name: '更新日時',
+      value: '2024/05/24 18:09'
+    },
+    {
+      name: '最終更新者',
+      value: 'NakajimaShunsuke'
+    },
+    {
+      name: '配信ID',
+      value: '501093204'
+    }
+  ])
+
+  const reqdata = reactive({
+    destination: '',
+    target_name: '',
+    delivery_type: 0,
+    delivery_date: '',
+    delivery_time: ''
+  })
+
+  const advanced = reactive({
+    voom: {
+      status: false,
+      label: 'LINE VOOMに投稿'
+    },
+    upper_limit: {
+      status: false,
+      label: '配信メッセージ数の上限を指定',
+      value: null
+    },
+    ac_test: {
+      status: false,
+      label: 'A/Bテストを作成',
+      value: 0
+    },
+    campaign: {
+      status: false,
+      label: 'キャンペーンを設定',
+      value: 0
+    }
+  })
+
   /**
    * computed
    */
@@ -44,6 +121,9 @@ export const useBroadcast = defineStore('broadcastStore', () => {
     headers,
     tab,
     page,
+    detail,
+    advanced,
+    reqdata,
     desserts
   }
 })
