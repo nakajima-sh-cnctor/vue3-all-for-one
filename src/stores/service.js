@@ -32,15 +32,20 @@ export const useService = defineStore('serviceStore', () => {
       },
       {
         value: 'broadcast',
-        title: '配信メッセージ一覧',
-        icon: 'mdi-view-list',
-        to: '/admin/line/broadcast'
-      },
-      {
-        value: 'broadcast-create',
-        title: '配信メッセージ作成',
-        icon: 'mdi-pencil',
-        to: '/admin/line/broadcast/create'
+        title: '配信メッセージ',
+        icon: 'mdi-broadcast',
+        group: [
+          {
+            value: 'broadcast-list',
+            title: '配信メッセージ一覧',
+            to: '/admin/line/broadcast'
+          },
+          {
+            value: 'broadcast-create',
+            title: '配信メッセージ作成',
+            to: '/admin/line/broadcast/create'
+          }
+        ]
       }
     )
   }
