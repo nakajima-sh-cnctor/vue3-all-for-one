@@ -19,10 +19,15 @@ export const useCampaing = defineStore('campaingStore', () => {
   ])
   const desserts = reactive([])
   const page = ref(1)
+  const detail = reactive({
+    id: '',
+    name: ''
+  })
 
   return {
     headers,
     desserts,
+    detail,
     page
   }
 })

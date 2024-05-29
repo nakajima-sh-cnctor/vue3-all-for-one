@@ -84,6 +84,11 @@ const router = createRouter({
           path: 'broadcast/campaign',
           name: 'Campaign',
           component: () => import('../views/LINE/Broadcast/CampaignView.vue')
+        },
+        {
+          path: 'broadcast/campaign/create',
+          name: 'CampaignCreate',
+          component: () => import('../views/LINE/Broadcast/CampCreateView.vue')
         }
       ]
     }
