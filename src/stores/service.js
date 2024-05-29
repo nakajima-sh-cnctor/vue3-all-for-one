@@ -44,6 +44,11 @@ export const useService = defineStore('serviceStore', () => {
             value: 'broadcast-create',
             title: '配信メッセージ作成',
             to: '/admin/line/broadcast/create'
+          },
+          {
+            value: 'broadcast-campaign',
+            title: 'キャンペーン',
+            to: '/admin/line/broadcast/campaign'
           }
         ]
       }

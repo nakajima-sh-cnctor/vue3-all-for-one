@@ -79,6 +79,11 @@ const router = createRouter({
           path: 'broadcast/create',
           name: 'CreateBroadcast',
           component: () => import('../views/LINE/Broadcast/CreateView.vue')
+        },
+        {
+          path: 'broadcast/campaign',
+          name: 'Campaign',
+          component: () => import('../views/LINE/Broadcast/CampaignView.vue')
         }
       ]
     }
