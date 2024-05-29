@@ -17,12 +17,19 @@ const pageCount = computed(() => Math.ceil(useCampaing().desserts.length / items
       <v-card-title class="font-weight-bold">キャンペーン</v-card-title>
       <v-spacer></v-spacer>
       <div>
-        <v-btn color="primary" variant="flat">
-          <v-icon>mdi-plus-thick</v-icon>
-          新規作成
-        </v-btn>
+        <router-link :to="{ name: 'CampaignCreate' }">
+          <v-btn color="primary" variant="flat">
+            <v-icon>mdi-plus-thick</v-icon>
+            新規作成
+          </v-btn>
+        </router-link>
       </div>
     </div>
+    <v-card-item
+      ><p class="supplement-m">
+        「キャンペーンA」や「キャンペーンB」などの任意のキャンペーンを作成して、複数のメッセージに設定すると、キャンペーン単位で集計を行うことができます。
+      </p></v-card-item
+    >
     <v-card-item>
       <c-caption caption="検索">
         <div class="d-flex">
