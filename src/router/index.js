@@ -89,6 +89,11 @@ const router = createRouter({
           path: 'broadcast/campaign/create',
           name: 'CampaignCreate',
           component: () => import('../views/LINE/Broadcast/CampCreateView.vue')
+        },
+        {
+          path: 'message-item/rich-message',
+          name: 'RichMessage',
+          component: () => import('../views/LINE/MessageItem/RichMessageView.vue')
         }
       ]
     }

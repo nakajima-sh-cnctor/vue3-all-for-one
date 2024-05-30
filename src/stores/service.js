@@ -51,6 +51,18 @@ export const useService = defineStore('serviceStore', () => {
             to: '/admin/line/broadcast/campaign'
           }
         ]
+      },
+      {
+        value: 'message-item',
+        title: 'メッセージアイテム',
+        icon: 'mdi-message-plus-outline',
+        group: [
+          {
+            value: 'rich-message',
+            title: 'リッチメッセージ',
+            to: '/admin/line/message-item/rich-message'
+          }
+        ]
       }
     )
   }
