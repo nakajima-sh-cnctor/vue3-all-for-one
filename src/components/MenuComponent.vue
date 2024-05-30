@@ -24,10 +24,16 @@ const rail = ref(true)
           :to="item.to"
           :title="item.title"
           :value="item.value"
+          slim
         ></v-list-item>
         <v-list-group :value="item.value" v-else>
           <template v-slot:activator="{ props }">
-            <v-list-item v-bind="props" :prepend-icon="item.icon" :title="item.title"></v-list-item>
+            <v-list-item
+              v-bind="props"
+              :prepend-icon="item.icon"
+              :title="item.title"
+              slim
+            ></v-list-item>
           </template>
           <v-list-item
             v-for="(groupitem, i) in item.group"
