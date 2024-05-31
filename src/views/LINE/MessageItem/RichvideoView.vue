@@ -20,10 +20,12 @@ const pageCount = computed(() => Math.ceil(useRichVideo().desserts.length / item
       <v-card-title class="font-weight-bold">リッチビデオメッセージ一覧</v-card-title>
       <v-spacer></v-spacer>
       <div>
-        <v-btn color="primary" variant="flat">
-          <v-icon>mdi-plus-thick</v-icon>
-          新規作成
-        </v-btn>
+        <router-link :to="{ name: 'RichvideoCreate' }">
+          <v-btn color="primary" variant="flat">
+            <v-icon>mdi-plus-thick</v-icon>
+            新規作成
+          </v-btn>
+        </router-link>
       </div>
     </div>
     <v-card-item>

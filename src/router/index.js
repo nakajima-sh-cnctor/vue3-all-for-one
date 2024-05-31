@@ -104,6 +104,11 @@ const router = createRouter({
           path: 'message-item/rich-video',
           name: 'Richvideo',
           component: () => import('../views/LINE/MessageItem/RichvideoView.vue')
+        },
+        {
+          path: 'message-item/rich-video/create',
+          name: 'RichvideoCreate',
+          component: () => import('../views/LINE/MessageItem/RichvideoCreateView.vue')
         }
       ]
     }
