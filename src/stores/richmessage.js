@@ -1,4 +1,4 @@
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useRichMessage = defineStore('richMessageStore', () => {
@@ -21,6 +21,25 @@ export const useRichMessage = defineStore('richMessageStore', () => {
 
   const desserts = reactive([])
 
+  const image = ref('https://cdn.vuetifyjs.com/images/parallax/material.jpg')
+
+  const typelist = [
+    {
+      title: 'リンク',
+      value: 0
+    },
+    {
+      title: 'クーポン',
+      value: 1
+    },
+    {
+      title: 'テキスト',
+      value: 2
+    }
+  ]
+
+  const type = ref(0)
+
   /**
    * リッチメッセージ情報取得処理
    * @returns {Promise<void>}
@@ -32,8 +51,27 @@ export const useRichMessage = defineStore('richMessageStore', () => {
    * @returns {Promise<void>}
    */
 
+  /**
+   * 画像情報取得処理
+   * @returns {Promise<void>}
+   */
+  const onFileChange = (event) => {
+    const file = event.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        image.value = e.target.result
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
   return {
     headers,
-    desserts
+    desserts,
+    image,
+    typelist,
+    type,
+    onFileChange
   }
 })

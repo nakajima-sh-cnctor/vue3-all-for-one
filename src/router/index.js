@@ -94,6 +94,11 @@ const router = createRouter({
           path: 'message-item/rich-message',
           name: 'RichMessage',
           component: () => import('../views/LINE/MessageItem/RichMessageView.vue')
+        },
+        {
+          path: 'message-item/rich-message/create',
+          name: 'RichMessageCreate',
+          component: () => import('../views/LINE/MessageItem/RichCreateView.vue')
         }
       ]
     }

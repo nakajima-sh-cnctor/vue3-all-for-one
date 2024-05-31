@@ -20,10 +20,12 @@ const pageCount = computed(() => Math.ceil(useRichMessage().desserts.length / it
       <v-card-title class="font-weight-bold">リッチメッセージ一覧</v-card-title>
       <v-spacer></v-spacer>
       <div>
-        <v-btn color="primary" variant="flat">
-          <v-icon>mdi-plus-thick</v-icon>
-          新規作成
-        </v-btn>
+        <router-link :to="{ name: 'RichMessageCreate' }">
+          <v-btn color="primary" variant="flat">
+            <v-icon>mdi-plus-thick</v-icon>
+            新規作成
+          </v-btn>
+        </router-link>
       </div>
     </div>
     <v-card-item>
