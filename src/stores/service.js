@@ -61,6 +61,11 @@ export const useService = defineStore('serviceStore', () => {
             value: 'rich-message',
             title: 'リッチメッセージ',
             to: '/admin/line/message-item/rich-message'
+          },
+          {
+            value: 'rich-video',
+            title: 'リッチビデオメッセージ',
+            to: '/admin/line/message-item/rich-video'
           }
         ]
       }
