@@ -57,7 +57,6 @@ const triggerFileInput = () => {
           aspect-ratio="16/9"
           cover
         ></v-img>
-        <v-img></v-img>
       </div>
 
       <div class="ma-2">
